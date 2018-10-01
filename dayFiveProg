@@ -16,13 +16,13 @@ return 0;
 }
 
 float inNFract(int n) {
-int i,n[100], d[100];
+int i,n1[100], d1[100];
 float f[100];
 
 for(int i=0;i<n;++i) {
 printf("input numerators and denominators of fractions (n/d)...\n");
-scanf("%d%d", &n[i], &d[i]);
-f[i]=n[i]/d[i];
+scanf("%d%d", &n1[i], &d1[i]);
+f[i]=n1[i]/d1[i];
 }
 printf("the sum of the above n fractions is .. \n");
 float sum=0;
@@ -33,21 +33,22 @@ printf("%d", sum);
 }
 
 int main() {
-int ch;
-printf("press 1 to add two fractions; 2 to add n number of fractions \n);
+int ch,l;
+printf("press 1 to add two fractions; 2 to add n number of fractions \n");
 scanf("%d", &ch);
-
+float x,y;
 switch(ch) {
-case 1 : float x=ipFract();
-          float y=ipFract();
+case 1 : 
+x= ipFract();
+y= ipFract();
           sumFract(x,y);
           break;
           
 case 2 : 
-int l;
+
 printf("enter n \n");
 scanf("%d", &l);
-inNfract(l);
+inNFract(l);
 break;
 
 default : printf("wrong choice \n");
