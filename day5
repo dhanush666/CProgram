@@ -1,0 +1,46 @@
+#include<stdio.h>
+
+void fadd() {
+    int x1,y1,x2,y2,x3,y3;
+    printf("enter the first fraction x1/y1 \n");
+    scanf("%d%d", &x1,&y1);
+    printf("enter the values of second fraction x2/y2 \n");
+    scanf("%d%d", &x2,&y2);
+    x3= (x1*y2)+(x2*y1);
+    y3= y1*y2;
+    printf("the sum of the entered fractions \n %d/%d ", x3, y3);
+}
+
+int fnadd(int n) {
+    float sum=0;
+    int a[100],i,b[100];
+    for(i=0;i<n;++i){
+        printf("enter fractions (a/b) \n");
+        scanf("%d%d", &a[i], &b[i]);
+    }
+    for(i=0;i<n;++i){
+        sum=sum+((float)a[i]/b[i]);
+    }
+    
+    printf("the sum of n fractions is \n %f", sum);
+    return 0;
+}
+
+int main() {
+    int ch,n;
+    printf("press 1 for adding two fracts or 2 for adding n fracts \n");
+    scanf("%d", &ch);
+    switch(ch){
+        case 1: fadd(); break;
+    
+        case 2: printf("enter n \n");
+                scanf("%d", &n);
+                fnadd(n);
+                break;
+        default: printf("you have entered wrong choice \n");
+        
+    }
+
+    return 0;
+    
+}
